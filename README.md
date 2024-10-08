@@ -31,9 +31,16 @@ Use the `_attached` variable on any widget to have Google Maps loaded and ready 
 
 ```
 var html = dg.render({
-    _type: 'foo',
-    _attached: {
-        dg_google: ['maps']
-    }
+  _type: 'foo',
+  _attached: {
+    dg_google_maps: [
+      {
+        name: 'maps',
+        initMap: function() {
+          console.log('my map is ready');
+        }
+      }
+    ]
+  }
 });
 ```
